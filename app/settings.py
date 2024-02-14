@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from re import template
 
 from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 
     'main',
     'goods',
+    'users',
     
 
     
@@ -69,7 +71,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
